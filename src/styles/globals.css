@@ -1,0 +1,107 @@
+/* Base reset and global styles */
+
+:root {
+  /* Design tokens from design-tokens.json */
+  --primary: #6366F1;
+  --primary-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --success: #10B981;
+  --success-foreground: #FFFFFF;
+  --warning: #F59E0B;
+  --warning-foreground: #FFFFFF;
+  --background: #F9FAFB;
+  --foreground: #1F2937;
+  --border: #E5E7EB;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.08);
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --font-family: Inter, system-ui, sans-serif;
+  --font-size-base: 1rem;
+  --line-height: 1.5;
+  --transition-fast: 150ms;
+  --focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #1F2937;
+    --foreground: #E5E7EB;
+    --border: #374151;
+    --primary: #818CF8;
+    --destructive: #F87171;
+    --success: #34D399;
+    --warning: #FCD34D;
+  }
+}
+
+:root[data-theme="dark"] {
+  --background: #1F2937;
+  --foreground: #E5E7EB;
+  --border: #374151;
+  --primary: #818CF8;
+  --destructive: #F87171;
+  --success: #34D399;
+  --warning: #FCD34D;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--foreground);
+  background-color: var(--background);
+  line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom shadcn overrides */
+
+.button {
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.input {
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-2) var(--spacing-3);
+}
+
+.badge {
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+}
+
+.avatar {
+  border: 2px solid var(--background);
+}
+
+/* Responsive side gutter */
+@supports (padding-left: max(16px, env(safe-area-inset-left, 0px))) {
+  body, html {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+}
+
+/* Hide selection on mobile tap */
+* {
+  -webkit-tap-highlight-color: transparent;
+}

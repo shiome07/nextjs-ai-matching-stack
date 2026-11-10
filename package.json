@@ -1,0 +1,38 @@
+{
+  "name": "dating-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1164.0",
+    "@aws-sdk/s3-request-presigner": "^3.1164.0",
+    "@base-ui/react": "^1.9.0",
+    "@clerk/nextjs": "^7.9.25",
+    "@neondatabase/serverless": "^1.2.0",
+    "cn": "^0.5.2",
+    "next": "16.4.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "svix": "^2.9.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.6.2",
+    "class-variance-authority": "^0.7.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.5",
+    "lucide-react": "^1.70.0",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.3"
+  }
+}
